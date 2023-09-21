@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard - Blog Gossip Girl</title>
+</head>
+<body>
+    <h1>Dashboard - Mi Blog</h1>
+    
+    <h2>Bienvenido, {{ current_user.username }}!</h2>
+
+    <h3>Tus Publicaciones:</h3>
+    <ul>
+        {% for post in posts %}
+            <li>
+                <h4>{{ post.title }}</h4>
+                <p>{{ post.content }}</p>
+                
+                <h5>Comentarios:</h5>
+                <ul>
+                    {% for comment in post.comments %}
+                        <li>{{ comment.text }}</li>
+                    {% endfor %}
+                </ul>
+
+                <form method="POST" action="{{ url_for('agregar_comentario', post_id=post.id) }}">
+                    <label for="comment">Añadir comentario:</label>
+                    <input type="text" id="comment" name="comment" required>
+                    <input type="submit" value="Comentar">
+                </form>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <p><a href="{{ url_for('logout') }}">Cerrar sesión</a></p>
+</body>
+</html>

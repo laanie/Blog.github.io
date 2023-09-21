@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Agregar Publicación - Blog Gossip Girl</title>
+</head>
+<body>
+    <h1>Agregar Publicación - Blog Gossip Girl</h1>
+
+    <h2>Notificaciones</h2>
+    <ul>
+        {% for notification in notifications %}
+            <li>{{ notification.message }}</li>
+        {% endfor %}
+    </ul>
+
+    <form method="POST" action="{{ url_for('agregar_publicacion') }}">
+        <label for="title">Título:</label>
+        <input type="text" id="title" name="title" required>
+
+        <label for="content">Contenido:</label>
+        <textarea id="content" name="content" required></textarea>
+
+        <input type="submit" value="Agregar Publicación">
+    </form>
+</body>
+</html>

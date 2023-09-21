@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mi Perfil - Mi Blog</title>
+</head>
+<body>
+    <h1>Mi Perfil</h1>
+
+    <p>Nombre: {{ current_user.name }}</p>
+    <p>Email: {{ current_user.email }}</p>
+    <p>Fecha de Nacimiento: {{ current_user.date_of_birth }}</p>
+
+    <a href="{{ url_for('editar_perfil') }}">Editar Perfil</a>
+</body>
+</html>

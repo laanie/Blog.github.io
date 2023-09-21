@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Eliminar Publicación - Gossip GIRL</title>
+</head>
+<body>
+    <h1>Eliminar Publicación - Gossip GIRL</h1>
+
+    <p>¿Estás seguro de que deseas eliminar esta publicación?</p>
+    <p>Título: {{ post.title }}</p>
+    <p>Contenido: {{ post.content }}</p>
+
+    <form method="POST" action="{{ url_for('eliminar_publicacion', post_id=post.id) }}">
+        <input type="submit" value="Eliminar">
+    </form>
+
+    <p><a href="{{ url_for('dashboard') }}">Cancelar</a></p>
+</body>
+</html>

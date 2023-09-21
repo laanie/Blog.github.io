@@ -1,0 +1,11 @@
+<h2>Resultados Filtrados</h2>
+<p>Filtrado por Categoría: {{ categoria }}</p>
+<p>Filtrado por Fecha: {{ fecha }}</p>
+<ul>
+    {% for post in posts %}
+        <li>
+            <h3>{{ post.title }}</h3>
+            <p>{{ post.content }}</p>
+        </li>
+    {% endfor %}
+</ul>

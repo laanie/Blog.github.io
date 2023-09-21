@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="static/style.css">
+    <title>Blog GOSSIP GIRL XOXO</title>
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <h1>GOSSIP GIRL </h1>
+    <ul>
+        {% for post in posts %}
+            <li>
+                <h2>{{ post['titulo'] }}</h2>
+                <p>{{ post['contenido'] }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+    
+    {% include 'footer.html' %}
+</body>
+</html>

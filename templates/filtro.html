@@ -1,0 +1,10 @@
+<form method="POST" action="{{ url_for('filtrar') }}">
+    <select name="categoria">
+        <option value="categoria1">Categoría 1</option>
+        <option value="categoria2">Categoría 2</option>
+        <!-- Agrega más opciones de categoría según tu aplicación -->
+    </select>
+    
+    <input type="date" name="fecha">
+    <button type="submit">Filtrar</button>
+</form>

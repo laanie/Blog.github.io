@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registro - Blog Gossip Girl</title>
+</head>
+<body>
+    <h1>Registro - Blog Gossip Girl</h1>
+
+    <form method="POST" action="{{ url_for('registro') }}">
+        <label for="username">Nombre de usuario:</label>
+        <input type="text" id="username" name="username" required>
+        
+        <label for="password">Contraseña:</label>
+        <input type="password" id="password" name="password" required>
+
+        <input type="submit" value="Registrarse">
+    </form>
+
+    <p>¿Ya tienes una cuenta? <a href="{{ url_for('login') }}">Inicia sesión</a></p>
+</body>
+</html>
